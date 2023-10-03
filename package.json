@@ -1,4 +1,10 @@
 {
+  "engines": {
+    "node": ">=18.18.0",
+    "yarn": "please-use-npm",
+    "pnpm": "please-use-npm",
+    "npm": ">=9.8.1"
+  },
   "devDependencies": {
     "git-commit-msg-linter": "^5.0.4",
     "tslint": "^6.1.3",
