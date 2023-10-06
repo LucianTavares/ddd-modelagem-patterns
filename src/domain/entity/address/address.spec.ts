@@ -1,6 +1,6 @@
 import { Address } from "./address.entity";
 
-describe('Customer Entity', () => {
+describe('Address Entity', () => {
     describe("Success", () => {
         it("should create a address entity", () => {
             const address = new Address({
