@@ -1,12 +1,12 @@
 import { IAddress } from "./address.types";
 
 export class Address {
-    _city: string;
-    _state: string;
-    _number: string;
-    _street: string;
-    _country: string;
-    _zipCode: string;
+    private _city: string;
+    private _state: string;
+    private _number: string;
+    private _street: string;
+    private _country: string;
+    private _zipCode: string;
 
     constructor({ city, state, street, country, zipCode, number }: IAddress) {
         this._city = city;
@@ -19,27 +19,27 @@ export class Address {
     }
 
     validate(): void {
-        if (!!this._city.length) {
+        if (!this._city.length) {
             throw new Error("City is required");
         }
 
-        if (!!this._number.length) {
+        if (!this._number.length) {
             throw new Error("Number is required");
         }
 
-        if (!!this._state.length) {
+        if (!this._state.length) {
             throw new Error("State is required");
         }
 
-        if (!!this._street.length) {
+        if (!this._street.length) {
             throw new Error("Street is required");
         }
 
-        if (!!this._country.length) {
+        if (!this._country.length) {
             throw new Error("Country is required");
         }
 
-        if (!!this._zipCode.length) {
+        if (!this._zipCode.length) {
             throw new Error("Zip Code is required");
         }
     }
