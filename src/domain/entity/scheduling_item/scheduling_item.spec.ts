@@ -44,12 +44,12 @@ describe('SchedulingItem Entity', () => {
             expect(() => {
                 new SchedulingItem({
                     id: "1",
-                    price: undefined,
+                    price: -1,
                     scheduledTime: "08:00",
                     name: "Vinicius Italo",
                     scheduledDate: new Date(),
                 })
-            }).toThrowError("Price is required")
+            }).toThrowError("Price must be greater than zero")
         });
 
         it("should throw an error if the scheduledDate is not valid", () => {
