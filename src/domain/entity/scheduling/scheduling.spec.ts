@@ -4,7 +4,7 @@ import { Scheduling } from "./scheduling.entity";
 
 describe('Scheduling Entity', () => {
     describe("Success", () => {
-        it("should create a customer entity", () => {
+        it("should create a scheduling entity", () => {
             const firstItem = new SchedulingItem({
                 id: "1",
                 price: 50,
@@ -12,6 +12,7 @@ describe('Scheduling Entity', () => {
                 name: "Vinicius Italo",
                 scheduledDate: new Date(),
             });
+
             const secondItem = new SchedulingItem({
                 id: "2",
                 price: 70,

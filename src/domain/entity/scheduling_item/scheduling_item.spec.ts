@@ -2,8 +2,8 @@ import { SchedulingItem } from "./scheduling_item.entity";
 
 describe('SchedulingItem Entity', () => {
     describe("Success", () => {
-        it("should create a customer entity", () => {
-            const schedulingItemV = new SchedulingItem({
+        it("should create a schedulingItem entity", () => {
+            const schedulingItem = new SchedulingItem({
                 id: "1",
                 price: 50,
                 scheduledTime: "08:00",
@@ -11,7 +11,7 @@ describe('SchedulingItem Entity', () => {
                 scheduledDate: new Date(),
             });
 
-            expect(schedulingItemV).toBeDefined();
+            expect(schedulingItem).toBeDefined();
         });
     });
 
