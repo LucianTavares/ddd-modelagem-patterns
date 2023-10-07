@@ -17,6 +17,6 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "test": "jest --watch"
+    "test": "node_modules/.bin/tsc --noEmit && jest --watchAll"
   }
 }
