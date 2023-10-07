@@ -2,7 +2,7 @@ export interface ISchedulingItem {
     id: string;
     name: string;
     price: number;
-    serviceId: string;
+    productId: string;
     scheduledDate: Date;
     scheduledTime: string;
 }
