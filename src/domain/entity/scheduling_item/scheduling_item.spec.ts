@@ -56,7 +56,7 @@ describe('SchedulingItem Entity', () => {
             }).toThrowError("Price must be greater than zero")
         });
 
-        it("should throw an error if the scheduledDate is not valid", () => {
+        it("should throw an error if the scheduledDate is less than the current date", () => {
             expect(() => {
                 new SchedulingItem({
                     id: "1",
@@ -64,9 +64,9 @@ describe('SchedulingItem Entity', () => {
                     serviceId: "1",
                     scheduledTime: "08:00",
                     name: "Vinicius Italo",
-                    scheduledDate: undefined,
+                    scheduledDate: new Date(2023, 1, 1),
                 })
-            }).toThrowError("Scheduled Date is required")
+            }).toThrowError("Scheduled date must be later or equal today")
         });
 
         it("should throw an error if the name is not valid", () => {

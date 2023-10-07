@@ -13,13 +13,25 @@ export class SchedulingItem {
         this._name = name;
         this._price = price;
         this._serviceId = serviceId;
-        this._scheduledDate = scheduledDate;
         this._scheduledTime = scheduledTime;
+        this._scheduledDate = scheduledDate;
+        this.timeValidate()
         this.validate()
     }
 
     get price(): number {
         return this._price;
+    }
+
+    timeValidate(): void {
+        const currentTime = new Date().getTime();
+        const eventTime = this._scheduledDate.getTime();
+
+        const isPrevDateScheduling = currentTime <= eventTime;
+
+        if (!isPrevDateScheduling) {
+            throw new Error("Scheduled date must be later or equal today");
+        }
     }
 
     validate(): void {
@@ -37,10 +49,6 @@ export class SchedulingItem {
 
         if (this._price < 0) {
             throw new Error("Price must be greater than zero");
-        }
-
-        if (this._scheduledDate === undefined) {
-            throw new Error("Scheduled Date is required");
         }
 
         if (!this._scheduledTime) {
