@@ -8,6 +8,7 @@ describe('Scheduling Entity', () => {
             const firstItem = new SchedulingItem({
                 id: "1",
                 price: 50,
+                serviceId: "1",
                 scheduledTime: "08:00",
                 name: "Vinicius Italo",
                 scheduledDate: new Date(),
@@ -16,6 +17,7 @@ describe('Scheduling Entity', () => {
             const secondItem = new SchedulingItem({
                 id: "2",
                 price: 70,
+                serviceId: "1",
                 scheduledTime: "18:00",
                 name: "Beatriz Barbara",
                 scheduledDate: new Date(),
@@ -34,6 +36,7 @@ describe('Scheduling Entity', () => {
             const firstItem = new SchedulingItem({
                 id: "1",
                 price: 50,
+                serviceId: "1",
                 scheduledTime: "08:00",
                 name: "Vinicius Italo",
                 scheduledDate: new Date(),
@@ -53,6 +56,7 @@ describe('Scheduling Entity', () => {
             const secondItem = new SchedulingItem({
                 id: "2",
                 price: 70,
+                serviceId: "1",
                 scheduledTime: "18:00",
                 name: "Beatriz Barbara",
                 scheduledDate: new Date(),

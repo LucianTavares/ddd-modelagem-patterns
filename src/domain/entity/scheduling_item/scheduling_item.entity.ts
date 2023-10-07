@@ -4,13 +4,15 @@ export class SchedulingItem {
     private _id: string;
     private _name: string;
     private _price: number;
+    private _serviceId: string;
     private _scheduledDate: Date;
     private _scheduledTime: string;
 
-    constructor({ id, name, price, scheduledDate, scheduledTime }: ISchedulingItem) {
+    constructor({ id, name, price, scheduledDate, scheduledTime, serviceId }: ISchedulingItem) {
         this._id = id;
         this._name = name;
         this._price = price;
+        this._serviceId = serviceId;
         this._scheduledDate = scheduledDate;
         this._scheduledTime = scheduledTime;
         this.validate()
@@ -23,6 +25,10 @@ export class SchedulingItem {
     validate(): void {
         if (!this._id.length) {
             throw new Error("Id is required");
+        }
+
+        if (!this._serviceId.length) {
+            throw new Error("Product Id is required");
         }
 
         if (!this._name.length) {

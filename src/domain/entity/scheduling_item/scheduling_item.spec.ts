@@ -6,6 +6,7 @@ describe('SchedulingItem Entity', () => {
             const schedulingItem = new SchedulingItem({
                 id: "1",
                 price: 50,
+                serviceId: "1",
                 scheduledTime: "08:00",
                 name: "Vinicius Italo",
                 scheduledDate: new Date(),
@@ -21,6 +22,7 @@ describe('SchedulingItem Entity', () => {
                 new SchedulingItem({
                     id: "",
                     price: 50,
+                    serviceId: "1",
                     scheduledTime: "08:00",
                     name: "Vinicius Italo",
                     scheduledDate: new Date(),
@@ -33,6 +35,7 @@ describe('SchedulingItem Entity', () => {
                 new SchedulingItem({
                     id: "1",
                     price: 0,
+                    serviceId: "1",
                     scheduledTime: "",
                     name: "Vinicius Italo",
                     scheduledDate: new Date(),
@@ -45,6 +48,7 @@ describe('SchedulingItem Entity', () => {
                 new SchedulingItem({
                     id: "1",
                     price: -1,
+                    serviceId: "1",
                     scheduledTime: "08:00",
                     name: "Vinicius Italo",
                     scheduledDate: new Date(),
@@ -57,6 +61,7 @@ describe('SchedulingItem Entity', () => {
                 new SchedulingItem({
                     id: "1",
                     price: 50,
+                    serviceId: "1",
                     scheduledTime: "08:00",
                     name: "Vinicius Italo",
                     scheduledDate: undefined,
@@ -69,11 +74,25 @@ describe('SchedulingItem Entity', () => {
                 new SchedulingItem({
                     id: "1",
                     price: 0,
-                    scheduledTime: "08:00",
                     name: "",
+                    serviceId: "1",
+                    scheduledTime: "08:00",
                     scheduledDate: new Date(),
                 })
             }).toThrowError("Name is required")
+        });
+
+        it("should throw an error if the serviceId is not valid", () => {
+            expect(() => {
+                new SchedulingItem({
+                    id: "1",
+                    price: 0,
+                    name: "",
+                    serviceId: "",
+                    scheduledTime: "08:00",
+                    scheduledDate: new Date(),
+                })
+            }).toThrowError("Product Id is required")
         });
     });
 });
