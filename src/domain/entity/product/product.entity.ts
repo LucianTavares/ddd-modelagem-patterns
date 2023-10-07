@@ -1,13 +1,13 @@
-import { TypeServiceEnum } from "./enums/types.enums";
-import { IService } from "./service.types";
+import { TypeProductEnum } from "./enums/types.enums";
+import { IProduct } from "./product.types";
 
-export class Service {
+export class Product {
     private _id: string;
     private _name: string;
     private _price: number;
-    private _types: TypeServiceEnum[];
+    private _types: TypeProductEnum[];
 
-    constructor({ id, name, price, types }: IService) {
+    constructor({ id, name, price, types }: IProduct) {
         this._id = id;
         this._types = types;
         this._name = name;
@@ -15,7 +15,7 @@ export class Service {
         this.validate();
     }
 
-    get types(): TypeServiceEnum[] {
+    get types(): TypeProductEnum[] {
         return this._types;
     }
 
@@ -37,7 +37,7 @@ export class Service {
         }
     }
 
-    changeTypesService(types: TypeServiceEnum[]): void {
+    changeTypesProduct(types: TypeProductEnum[]): void {
         this._types = types;
         this.validate();
     }

@@ -1,4 +1,4 @@
-export enum TypeServiceEnum {
+export enum TypeProductEnum {
     BUFFET = "buffet",
 
     LOCATION = "locação",

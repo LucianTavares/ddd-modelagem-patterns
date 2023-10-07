@@ -1,30 +1,30 @@
-import { Service } from "./service.entity";
-import { TypeServiceEnum } from "./enums/types.enums";
+import { Product } from "./product.entity";
+import { TypeProductEnum } from "./enums/types.enums";
 
-describe('Service Entity', () => {
+describe('Product Entity', () => {
     describe("Success", () => {
         it("should create a service entity", () => {
-            const scheduling = new Service({
+            const scheduling = new Product({
                 id: "1",
                 name: "2",
                 price: 50,
-                types: [TypeServiceEnum.BUFFET],
+                types: [TypeProductEnum.BUFFET],
             });
 
             expect(scheduling).toBeDefined();
         });
 
         it("should be update services in call of changeTypesService", () => {
-            const scheduling = new Service({
+            const scheduling = new Product({
                 id: "1",
                 name: "2",
                 price: 50,
-                types: [TypeServiceEnum.BUFFET],
+                types: [TypeProductEnum.BUFFET],
             });
 
             expect(scheduling.types).toHaveLength(1);
 
-            scheduling.changeTypesService([TypeServiceEnum.CLEANING, TypeServiceEnum.CUSTOM])
+            scheduling.changeTypesProduct([TypeProductEnum.CLEANING, TypeProductEnum.CUSTOM])
 
             expect(scheduling.types).toHaveLength(2);
         });
@@ -33,29 +33,29 @@ describe('Service Entity', () => {
     describe("Error", () => {
         it("should throw an error if the id is not valid", () => {
             expect(() => {
-                new Service({
+                new Product({
                     id: "",
                     name: "2",
                     price: 50,
-                    types: [TypeServiceEnum.BUFFET],
+                    types: [TypeProductEnum.BUFFET],
                 });
             }).toThrowError("Id is required")
         });
 
         it("should throw an error if the name is not valid", () => {
             expect(() => {
-                new Service({
+                new Product({
                     id: "1",
                     name: "",
                     price: 50,
-                    types: [TypeServiceEnum.BUFFET],
+                    types: [TypeProductEnum.BUFFET],
                 })
             }).toThrowError("Name is required")
         });
 
         it("should throw an error if the type is not valid", () => {
             expect(() => {
-                new Service({
+                new Product({
                     id: "1",
                     name: "2",
                     price: 50,
@@ -66,11 +66,11 @@ describe('Service Entity', () => {
 
         it("should throw an error if the price is not valid", () => {
             expect(() => {
-                new Service({
+                new Product({
                     id: "1",
                     name: "2",
                     price: -1,
-                    types: [TypeServiceEnum.CLEANING],
+                    types: [TypeProductEnum.CLEANING],
                 })
             }).toThrowError("Price must be greater than zero")
         });
