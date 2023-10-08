@@ -27,6 +27,19 @@ describe('Customer Entity', () => {
             expect(customer.name).toEqual("New Example");
         });
 
+        it("should update the points after calling the 'addRewardPoints' function", () => {
+            const customer = new Customer({
+                id: '1',
+                verified: false,
+                name: 'Vinicius Italo',
+                email: 'test@example.com',
+            });
+
+            customer.addRewardPoints(5)
+
+            expect(customer.rewardPoints).toEqual(5);
+        });
+
         it("should update the e-mail after calling the 'changeEmail' function", () => {
             const customer = new Customer({
                 id: '1',

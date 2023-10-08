@@ -7,6 +7,7 @@ export class Customer {
     private _email: string;
     private _address?: Address;
     private _verified: boolean;
+    private _rewardPoints: number = 0;
 
     constructor({ id, name, verified, email, address }: ICustomer) {
         this._id = id;
@@ -17,11 +18,15 @@ export class Customer {
         this.validate();
     }
 
+    get id(): string { return this._id; }
+
     get name(): string { return this._name; }
 
     get email(): string { return this._email; }
 
     get verified(): boolean { return this._verified; }
+
+    get rewardPoints(): number { return this._rewardPoints; }
 
     set address(address: Address | undefined) {
         this._address = address;
@@ -55,11 +60,15 @@ export class Customer {
         this._verified = false;
     }
 
+    addRewardPoints(points: number) {
+        this._rewardPoints += points;
+    }
+
     check() {
         if (!this._address || !this._email) {
             throw new Error("Email and address is required for verification");
         }
-        
+
         this._verified = true;
     }
 }
