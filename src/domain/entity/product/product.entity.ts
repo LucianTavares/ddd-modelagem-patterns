@@ -19,6 +19,10 @@ export class Product {
         return this._types;
     }
 
+    get price(): number {
+        return this._price;
+    }
+
     validate(): void {
         if (!this._id.length) {
             throw new Error("Id is required");
@@ -40,5 +44,9 @@ export class Product {
     changeTypesProduct(types: TypeProductEnum[]): void {
         this._types = types;
         this.validate();
+    }
+
+    changePrice(price: number): void {
+        this._price = price;
     }
 }
