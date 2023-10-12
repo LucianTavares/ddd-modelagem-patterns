@@ -26,8 +26,8 @@ describe('Address Entity', () => {
             });
 
             expect(address.toStringBR())
-                .toEqual("Fulano de tal, 1A 00000-000, Ribeirão Pires/São Paulo - Brasil")
-        })
+                .toEqual("Fulano de tal, 1A 00000-000, Ribeirão Pires/São Paulo - Brasil");
+        });
     });
 
     describe("Error", () => {
@@ -41,7 +41,7 @@ describe('Address Entity', () => {
                     city: "Ribeirão Pires",
                     street: "Fulano de tal",
                 });
-            }).toThrowError("Number is required")
+            }).toThrowError("Number is required");
         });
 
         it("should throw an error if the country is not valid", () => {
@@ -54,7 +54,7 @@ describe('Address Entity', () => {
                     city: "Ribeirão Pires",
                     street: "Fulano de tal",
                 });
-            }).toThrowError("Country is required")
+            }).toThrowError("Country is required");
         });
 
         it("should throw an error if the state is not valid", () => {
@@ -67,7 +67,7 @@ describe('Address Entity', () => {
                     city: "Ribeirão Pires",
                     street: "Fulano de tal",
                 });
-            }).toThrowError("State is required")
+            }).toThrowError("State is required");
         });
 
         it("should throw an error if the zip code is not valid", () => {
@@ -80,7 +80,7 @@ describe('Address Entity', () => {
                     city: "Ribeirão Pires",
                     street: "Fulano de tal",
                 });
-            }).toThrowError("Zip Code is required")
+            }).toThrowError("Zip Code is required");
         });
 
         it("should throw an error if the city is not valid", () => {
@@ -93,7 +93,7 @@ describe('Address Entity', () => {
                     city: "",
                     street: "Fulano de tal",
                 });
-            }).toThrowError("City is required")
+            }).toThrowError("City is required");
         });
 
         it("should throw an error if the street is not valid", () => {
@@ -106,7 +106,7 @@ describe('Address Entity', () => {
                     city: "Ribeirão Pires",
                     street: "",
                 });
-            }).toThrowError("Street is required")
+            }).toThrowError("Street is required");
         });
     });
 });
