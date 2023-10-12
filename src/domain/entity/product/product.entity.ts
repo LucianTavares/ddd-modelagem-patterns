@@ -5,7 +5,7 @@ export class Product {
     private _id: string;
     private _name: string;
     private _price: number;
-    private _types: TypeProductEnum[];
+    private _types: string[];
 
     constructor({ id, name, price, types }: IProduct) {
         this._id = id;
@@ -15,12 +15,20 @@ export class Product {
         this.validate();
     }
 
-    get types(): TypeProductEnum[] {
+    get types(): string[] {
         return this._types;
     }
 
     get price(): number {
         return this._price;
+    }
+
+    get name(): string {
+        return this._name;
+    }
+
+    get id(): string {
+        return this._id;
     }
 
     validate(): void {
@@ -41,12 +49,16 @@ export class Product {
         }
     }
 
-    changeTypesProduct(types: TypeProductEnum[]): void {
+    changeTypesProduct(types: string[]): void {
         this._types = types;
         this.validate();
     }
 
     changePrice(price: number): void {
         this._price = price;
+    }
+
+    changeName(name: string): void {
+        this._name = name;
     }
 }

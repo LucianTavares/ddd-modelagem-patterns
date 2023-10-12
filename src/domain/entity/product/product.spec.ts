@@ -43,6 +43,21 @@ describe('Product Entity', () => {
 
             expect(scheduling.price).toEqual(100);
         });
+
+        it("should be update name of product", () => {
+            const scheduling = new Product({
+                id: "1",
+                name: "first name",
+                price: 50,
+                types: [TypeProductEnum.BUFFET],
+            });
+
+            expect(scheduling.name).toEqual("first name");
+
+            scheduling.changeName("second name");
+
+            expect(scheduling.name).toEqual("second name");
+        });
     });
 
     describe("Error", () => {
