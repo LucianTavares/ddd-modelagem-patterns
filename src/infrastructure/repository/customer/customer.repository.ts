@@ -20,12 +20,14 @@ export class CustomerRepository implements ICustomerRepository {
         await CustomerModel.create({
             id: entity.id,
             name: entity.name,
-            city: entity.address.city,
-            state: entity.address.state,
-            number: entity.address.number,
-            street: entity.address.street,
-            country: entity.address.country,
-            zipCode: entity.address.zipCode,
+            email: entity.email,
+            verified: entity.verified,
+            city: entity.Address.city,
+            state: entity.Address.state,
+            number: entity.Address.number,
+            street: entity.Address.street,
+            country: entity.Address.country,
+            zipCode: entity.Address.zipCode,
             rewardPoints: entity.rewardPoints,
         });
     }

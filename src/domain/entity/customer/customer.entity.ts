@@ -9,11 +9,10 @@ export class Customer {
     private _verified: boolean;
     private _rewardPoints: number = 0;
 
-    constructor({ id, name, verified, email, address }: ICustomer) {
+    constructor({ id, name, verified, email }: ICustomer) {
         this._id = id;
         this._name = name;
         this._email = email;
-        this.address = address;
         this._verified = verified;
         this.validate();
     }
@@ -27,6 +26,10 @@ export class Customer {
     get verified(): boolean { return this._verified; }
 
     get rewardPoints(): number { return this._rewardPoints; }
+
+    get Address(): Address {
+        return this._address;
+    }
 
     set address(address: Address | undefined) {
         this._address = address;

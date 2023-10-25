@@ -10,7 +10,7 @@ describe('Customer repository', () => {
     beforeEach(async () => {
         sequelize = new Sequelize({
             dialect: 'sqlite',
-            storage: ':memory',
+            storage: ':memory:',
             logging: false,
             sync: { force: true }
         })
@@ -43,9 +43,9 @@ describe('Customer repository', () => {
 
         customer.address = address;
 
-        console.log(JSON.stringify(customer, null, 2));
-
         await customerRepository.create(customer);
+
+        console.log(customer)
 
         // const customerModel = await CustomerModel.findOne({ where: { id: '1' } });
 
